@@ -2,11 +2,17 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
 func main() {
-	name := "Joe"
+	var name string
+	if len(os.Args) > 1 {
+		name = os.Args[1]
+	} else {
+		name = "[Luke Skywalker]"
+	}
 	fmt.Printf("Hello, %s!\n", name)
 	printCurrentTime()
 }
